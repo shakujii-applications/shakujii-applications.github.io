@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>石神井アプリケーションズ | Shakujii Applications</title>
+  <meta name="description" content="東京を拠点にする、ひとりのアプリ開発者によるインディースタジオ。AIパートナーと共に、遊んでいるうちに力がつくパズルゲームなどを制作しています。" />
+
+  <!-- Google Fonts: Noto Sans JP -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================================
+       CSS変数(カラーパレット確定版)
+    ============================================================ */
+    :root {
+      --bg:          #FAFAF8;
+      --text:        #2E2E2E;
+      --text-sub:    #767676;
+      --green:       #4A7C59;
+      --green-light: #A8C3A8;
+      --border:      #E5E3DE;
+      --white:       #FFFFFF;
+      --card-bg:     #F4F3EF;
+    }
+
+    /* ============================================================
+       リセット・ベース
+    ============================================================ */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 400;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    a {
+      color: var(--green);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* ============================================================
+       レイアウト共通
+    ============================================================ */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section {
+      padding: 72px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      line-height: 1.4;
+    }
+
+    /* ============================================================
+       ヘッダー
+    ============================================================ */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .site-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: 0.03em;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .site-name .accent-bar {
+      width: 3px;
+      height: 18px;
+      background: var(--green);
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    /* ロゴ画像:shakujii_logo_web.png は正規化前(余白あり)の版のため、
+       固定px指定ではなく高さ基準+object-fit:containで安全に表示する。
+       将来ファイルの余白量が変わっても崩れない設計。 */
+    .site-name .logo-img {
+      height: 28px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    nav {
+      display: flex;
+      gap: 24px;
+    }
+
+    nav a {
+      font-size: 13px;
+      color: var(--text-sub);
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: var(--green);
+      text-decoration: none;
+    }
+
+    /* ============================================================
+       ヒーロー(事業概要)
+    ============================================================ */
+    #about {
+      padding-top: 96px;
+      padding-bottom: 80px;
+    }
+
+    .hero-headline {
+      font-size: clamp(28px, 5vw, 40px);
+      font-weight: 700;
+      line-height: 1.35;
+      margin-bottom: 32px;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-headline .studio-en {
+      display: block;
+      font-size: clamp(13px, 2vw, 15px);
+      font-weight: 500;
+      color: var(--text-sub);
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+
+    .hero-body {
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.9;
+      max-width: 560px;
+    }
+
+    .hero-body p + p {
+      margin-top: 16px;
+    }
+
+    .hero-accent {
+      display: inline-block;
+      border-left: 3px solid var(--green);
+      padding-left: 14px;
+      margin-top: 28px;
+      color: var(--text-sub);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    /* ============================================================
+       お知らせ
+    ============================================================ */
+    #news .news-list {
+      list-style: none;
+    }
+
+    #news .news-list li {
+      display: flex;
+      align-items: baseline;
+      gap: 20px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+    }
+
+    #news .news-list li:first-child {
+      border-top: 1px solid var(--border);
+    }
+
+    #news .news-date {
+      color: var(--text-sub);
+      white-space: nowrap;
+      flex-shrink: 0;
+      font-size: 13px;
+    }
+
+    #news .news-text {
+      color: var(--text);
+    }
+
+    /* リンクのあるお知らせ項目(詳細ページ/外部リンクへ遷移) */
+    #news .news-text a {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--green-light);
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    #news .news-text a:hover {
+      color: var(--green);
+      border-color: var(--green);
+      text-decoration: none;
+    }
+
+    /* 外部リンクの矢印アイコン */
+    #news .news-text a.external::after {
+      content: "↗";
+      display: inline-block;
+      margin-left: 4px;
+      font-size: 11px;
+      color: var(--text-sub);
+    }
+
+    /* サイト内詳細ページへのリンクの矢印アイコン */
+    #news .news-text a.internal::after {
+      content: "›";
+      display: inline-block;
+      margin-left: 4px;
+      font-weight: 700;
+      color: var(--green);
+    }
+
+    /* ============================================================
+       Screenshots(ゲーム画面ギャラリー)
+    ============================================================ */
+    #screenshots .screenshot-track {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 12px;
+      scrollbar-width: none;
+    }
+
+    #screenshots .screenshot-track::-webkit-scrollbar {
+      display: none;
+    }
+
+    .screenshot-card {
+      scroll-snap-align: start;
+      flex-shrink: 0;
+      width: 160px;
+    }
+
+    .screenshot-card img {
+      width: 100%;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+    }
+
+    .screenshot-card .screenshot-caption {
+      margin-top: 8px;
+      font-size: 12px;
+      color: var(--text-sub);
+      text-align: center;
+    }
+
+    /* ============================================================
+       Products カルーセル
+    ============================================================ */
+    #products .carousel-track {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 12px;
+      /* スクロールバーを非表示(見た目) */
+      scrollbar-width: none;
+    }
+
+    #products .carousel-track::-webkit-scrollbar {
+      display: none;
+    }
+
+    .product-card {
+      scroll-snap-align: start;
+      flex-shrink: 0;
+      width: 240px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .product-card .card-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 14px;
+      overflow: hidden;
+      background: var(--card-bg);
+      flex-shrink: 0;
+    }
+
+    .product-card .card-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Coming Soon はアイコン枠をグレーで表示 */
+    .product-card.coming-soon .card-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .product-card.coming-soon .card-icon::after {
+      content: "?";
+      font-size: 28px;
+      color: var(--border);
+      font-weight: 700;
+    }
+
+    .product-card .card-title {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .product-card .card-desc {
+      font-size: 13px;
+      color: var(--text-sub);
+      line-height: 1.7;
+      flex-grow: 1;
+    }
+
+    .product-card .card-link {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--green);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .product-card .card-link::after {
+      content: "→";
+    }
+
+    .product-card.coming-soon .card-link {
+      color: var(--text-sub);
+      pointer-events: none;
+    }
+
+    .carousel-hint {
+      margin-top: 12px;
+      font-size: 12px;
+      color: var(--text-sub);
+    }
+
+    /* ============================================================
+       お問い合わせ
+    ============================================================ */
+    #contact .contact-body {
+      font-size: 15px;
+      color: var(--text-sub);
+      margin-bottom: 28px;
+      line-height: 1.8;
+    }
+
+    .btn-contact {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border: 2px solid var(--green);
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--green);
+      background: transparent;
+      transition: background 0.15s, color 0.15s;
+      text-decoration: none;
+    }
+
+    .btn-contact:hover {
+      background: var(--green);
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    /* ============================================================
+       プライバシーポリシー
+    ============================================================ */
+    #privacy {
+      padding: 40px 0;
+    }
+
+    #privacy p {
+      font-size: 14px;
+      color: var(--text-sub);
+    }
+
+    /* ============================================================
+       フッター
+    ============================================================ */
+    footer {
+      background: var(--text);
+      color: var(--white);
+      padding: 40px 0;
+    }
+
+    .footer-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .footer-name {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .footer-address {
+      font-size: 13px;
+      color: #AAAAAA;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: #666666;
+    }
+
+    /* ============================================================
+       レスポンシブ(モバイル)
+    ============================================================ */
+    @media (max-width: 600px) {
+      nav {
+        display: none; /* モバイルではナビ非表示(必要に応じてハンバーガー化) */
+      }
+
+      section {
+        padding: 56px 0;
+      }
+
+      #about {
+        padding-top: 72px;
+      }
+
+      .product-card {
+        width: 200px;
+      }
+    }
+
+    /* ============================================================
+       アクセシビリティ: 動きを減らす設定への対応
+    ============================================================ */
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .btn-contact {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ========== ヘッダー ========== -->
+  <header>
+    <div class="header-inner">
+      <a href="#" class="site-name">
+        <img src="assets/shakujii_logo_web.png" alt="石神井アプリケーションズ Shakujii Applications" class="logo-img" />
+      </a>
+      <nav>
+        <a href="#news">お知らせ</a>
+        <a href="#screenshots">スクリーンショット</a>
+        <a href="#products">アプリ</a>
+        <a href="#contact">お問い合わせ</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== 事業概要 ========== -->
+  <section id="about">
+    <div class="container">
+      <h1 class="hero-headline">
+        <span class="studio-en">Shakujii Applications</span>
+        石神井アプリケーションズ
+      </h1>
+      <div class="hero-body">
+        <p>東京を拠点にする、ひとりのアプリ開発者によるインディースタジオです。</p>
+        <p>企画担当・コーディング担当・デザイン担当など、8つの役割を持つAIパートナーたちと相談しながら、ひとりで手を動かして作っています。</p>
+        <blockquote class="hero-accent">
+          「勉強の合間に、ちょっと肩の力を抜ける時間を」をコンセプトに、<br>
+          遊んでいるうちに自然と力がつくパズルゲームなどを制作しています。
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== お知らせ ========== -->
+  <section id="news">
+    <div class="container">
+      <p class="section-label">News</p>
+      <h2>お知らせ</h2>
+      <ul class="news-list">
+        <li>
+          <span class="news-date">2026.__.__</span>
+          <span class="news-text"><a href="news/2026-__-__-launch.html" class="internal">ホームページを公開しました</a></span>
+        </li>
+        <!-- 今後の追加例(コピーして追記するだけでOK):
+
+        外部リンク(Note記事・App Store等)の場合:
+        <li>
+          <span class="news-date">2026.__.__</span>
+          <span class="news-text"><a href="https://note.com/..." class="external" target="_blank" rel="noopener">Note記事「〇〇」を公開しました</a></span>
+        </li>
+
+        サイト内詳細ページの場合(news/ に新規htmlを追加してリンク):
+        <li>
+          <span class="news-date">2026.__.__</span>
+          <span class="news-text"><a href="news/xxxx.html" class="internal">PopDown Animals(ポプアニ)をリリースしました</a></span>
+        </li>
+
+        リンク不要な単純告知の場合(span のみでaタグなし):
+        <li>
+          <span class="news-date">2026.__.__</span>
+          <span class="news-text">〇〇</span>
+        </li>
+        -->
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========== Screenshots ========== -->
+  <section id="screenshots">
+    <div class="container">
+      <p class="section-label">Screenshots</p>
+      <h2>ゲーム画面</h2>
+      <div class="screenshot-track">
+
+        <div class="screenshot-card">
+          <img src="assets/screenshots/screen_01_home.png" alt="PopDown Animals タイトル画面" />
+          <p class="screenshot-caption">タイトル画面</p>
+        </div>
+
+        <div class="screenshot-card">
+          <img src="assets/screenshots/screen_02_start.png" alt="PopDown Animals ゲーム開始画面" />
+          <p class="screenshot-caption">プレイ開始</p>
+        </div>
+
+        <div class="screenshot-card">
+          <img src="assets/screenshots/screen_03_result.png" alt="PopDown Animals クリア結果画面" />
+          <p class="screenshot-caption">クリア結果</p>
+        </div>
+
+        <!-- 新しいスクリーンショット追加時はここに screenshot-card を1つ追加するだけでOK -->
+
+      </div>
+      <p class="carousel-hint">← スクロールして見る</p>
+    </div>
+  </section>
+
+  <!-- ========== Products ========== -->
+  <section id="products">
+    <div class="container">
+      <p class="section-label">Products</p>
+      <h2>アプリ</h2>
+      <div class="carousel-track">
+
+        <!-- カード1: ポプアニ -->
+        <div class="product-card">
+          <div class="card-icon">
+            <!-- TODO: ②のGitHub Pagesセットアップ後、アイコン画像パスに差し替え -->
+            <!-- <img src="assets/icon_popani.png" alt="PopDown Animals アイコン" /> -->
+          </div>
+          <div class="card-title">PopDown Animals<br><small style="font-weight:400;font-size:12px;">ポプアニ</small></div>
+          <div class="card-desc">風船で浮いた動物たちを、計算で助け出すパズルゲーム</div>
+          <!-- TODO: リリース後にApp StoreのURLを設定 -->
+          <span class="card-link coming-soon" style="color:var(--text-sub);pointer-events:none;">近日公開</span>
+        </div>
+
+        <!-- カード2: Coming Soon -->
+        <div class="product-card coming-soon">
+          <div class="card-icon"></div>
+          <div class="card-title">Coming Soon</div>
+          <div class="card-desc">次のアプリを鋭意開発中です</div>
+          <span class="card-link">お楽しみに</span>
+        </div>
+
+        <!-- 新アプリ追加時はここにカードを1つ追加するだけでOK -->
+
+      </div>
+      <p class="carousel-hint">← スクロールして見る</p>
+    </div>
+  </section>
+
+  <!-- ========== お問い合わせ ========== -->
+  <section id="contact">
+    <div class="container">
+      <p class="section-label">Contact</p>
+      <h2>お問い合わせ</h2>
+      <p class="contact-body">
+        アプリに関するご質問・不具合のご報告等は、<br>
+        メールにてお気軽にご連絡ください。
+      </p>
+      <!-- ⑦確定:独自ドメインメール反映済み(2026-07-28) -->
+      <a href="mailto:contact@shakujii-apps.com" class="btn-contact">
+        メールを送る
+      </a>
+    </div>
+  </section>
+
+  <!-- ========== プライバシーポリシー ========== -->
+  <section id="privacy">
+    <div class="container">
+      <p>
+        <a href="privacy-policy.html">プライバシーポリシー</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ========== フッター ========== -->
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-name">石神井アプリケーションズ（Shakujii Applications）</p>
+      <p class="footer-address">
+        東京都豊島区東池袋2丁目62番8号 BIGオフィスプラザ池袋1206
+      </p>
+      <p class="footer-copy">© 2026 Shakujii Applications</p>
+    </div>
+  </footer>
+
+</body>
+</html>
