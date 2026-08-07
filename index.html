@@ -24,6 +24,8 @@
       --border:      #E5E3DE;
       --white:       #FFFFFF;
       --card-bg:     #F4F3EF;
+      --navy:        #1B2A4A;
+      --navy-border: #2C3E60;
     }
 
     /* ============================================================
@@ -103,8 +105,8 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: var(--bg);
-      border-bottom: 1px solid var(--border);
+      background: var(--navy);
+      border-bottom: 1px solid var(--navy-border);
     }
 
     .header-inner {
@@ -120,7 +122,7 @@
     .site-name {
       font-size: 14px;
       font-weight: 700;
-      color: var(--text);
+      color: var(--white);
       letter-spacing: 0.03em;
       text-decoration: none;
       display: flex;
@@ -131,16 +133,15 @@
     .site-name .accent-bar {
       width: 3px;
       height: 18px;
-      background: var(--green);
+      background: var(--green-light);
       border-radius: 2px;
       flex-shrink: 0;
     }
 
-    /* ロゴ画像:shakujii_logo_web.png は正規化前(余白あり)の版のため、
-       固定px指定ではなく高さ基準+object-fit:containで安全に表示する。
-       将来ファイルの余白量が変わっても崩れない設計。 */
+    /* ヘッダー用ロゴ(白版):紺色背景に映える白抜きロゴを使用。
+       TODO: 太郎さんの方で白ロゴ画像を assets/shakujii_logo_white.png として用意・アップロード */
     .site-name .logo-img {
-      height: 40px;
+      height: 32px;
       width: auto;
       object-fit: contain;
       display: block;
@@ -153,12 +154,12 @@
 
     nav a {
       font-size: 13px;
-      color: var(--text-sub);
+      color: #C7D0DE;
       font-weight: 500;
     }
 
     nav a:hover {
-      color: var(--green);
+      color: var(--white);
       text-decoration: none;
     }
 
@@ -539,7 +540,8 @@
   <header>
     <div class="header-inner">
       <a href="#" class="site-name">
-        <img src="assets/shakujii_logo_web.png" alt="石神井アプリケーションズ Shakujii Applications" class="logo-img" />
+        <!-- TODO: 太郎さんの方で白ロゴ画像を assets/shakujii_logo_white.png として用意・アップロード -->
+        <img src="assets/shakujii_logo_white.png" alt="石神井アプリケーションズ Shakujii Applications" class="logo-img" />
       </a>
       <nav>
         <a href="#news">お知らせ</a>
