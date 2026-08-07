@@ -187,6 +187,22 @@
       margin-bottom: 8px;
     }
 
+    /* ヒーロー用ロゴ(大):透過PNG前提。背景色に依存しないよう背景色は付けない */
+    .hero-logo {
+      display: block;
+      height: clamp(56px, 9vw, 88px);
+      width: auto;
+      margin-bottom: 16px;
+    }
+
+    .hero-logo-caption {
+      font-size: clamp(13px, 2vw, 15px);
+      font-weight: 500;
+      color: var(--text-sub);
+      letter-spacing: 0.04em;
+      margin-bottom: 32px;
+    }
+
     .hero-body {
       color: var(--text);
       font-size: 15px;
@@ -537,9 +553,10 @@
   <!-- ========== 事業概要 ========== -->
   <section id="about">
     <div class="container">
-      <h1 class="hero-headline">
-        <span class="studio-en">Shakujii Applications</span>
-        石神井アプリケーションズ
+      <h1>
+        <!-- TODO: 太郎さんの方で透過版ロゴに差し替え予定(assets/shakujii_logo_web.png) -->
+        <img src="assets/shakujii_logo_web.png" alt="石神井アプリケーションズ" class="hero-logo" />
+        <span class="hero-logo-caption">石神井アプリケーションズ / Shakujii Applications</span>
       </h1>
       <div class="hero-body">
         <p>東京を拠点にアプリ開発を行っているインディースタジオです。</p>
@@ -594,17 +611,17 @@
 
         <div class="screenshot-card">
           <img src="assets/screenshots/screen_01_home.png" alt="PopDown Animals タイトル画面" />
-          <p class="screenshot-caption">タイトル画面</p>
+          <p class="screenshot-caption">ホーム画面</p>
         </div>
 
         <div class="screenshot-card">
           <img src="assets/screenshots/screen_02_start.png" alt="PopDown Animals ゲーム開始画面" />
-          <p class="screenshot-caption">プレイ開始</p>
+          <p class="screenshot-caption">プレイ画面</p>
         </div>
 
         <div class="screenshot-card">
           <img src="assets/screenshots/screen_03_result.png" alt="PopDown Animals クリア結果画面" />
-          <p class="screenshot-caption">クリア結果</p>
+          <p class="screenshot-caption">クリア画面</p>
         </div>
 
         <!-- 新しいスクリーンショット追加時はここに screenshot-card を1つ追加するだけでOK -->
@@ -653,8 +670,7 @@
       <p class="section-label">Contact</p>
       <h2>お問い合わせ</h2>
       <p class="contact-body">
-        現在アプリをリリース準備中のため、お問い合わせいただいてもすぐにご回答できない場合がございます。<br>
-        取材・提携等のご連絡は、下記メールよりお願いいたします。
+        アプリに関するお問い合わせは、下記メールよりお願いいたします。
       </p>
       <!-- ⑦確定:独自ドメインメール反映済み(2026-07-28) -->
       <a href="mailto:contact@shakujii-apps.com" class="btn-contact">
