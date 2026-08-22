@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<!--
+  popani-news.html
+  「PopDown Animals（ポプアニ）」専用のお知らせページ。
+
+  【命名ルール】屋号全体ではなく、各アプリ専用のお知らせページとして運用する。
+  将来2つ目以降のアプリが増えた場合は、同じ要領で (アプリ名スラッグ)-news.html を追加していく。
+  例: 次のアプリが「〇〇」であれば maru-news.html のように、アプリごとに独立させる。
+  屋号・サイト全体のお知らせ(サイト公開・告知等)は別ファイル news.html を使用する。
+-->
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お知らせ | PopDown Animals（ポプアニ）</title>
+<meta name="description" content="PopDown Animals（ポプアニ）のアップデート・不具合修正・イベント情報のお知らせです。">
+<link rel="icon" type="image/png" href="assets/icon_popani.png" />
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZED6MGTPJM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZED6MGTPJM');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+  /* ============================================================
+     アプリ専用パレット(Sky Pop・design_system.md準拠)
+     ※HP(index.html等)のモノトーン+グリーンとは意図的に別トーン
+  ============================================================ */
+  :root {
+    --sky-blue:      #378ADD;
+    --sky-blue-dark: #1F70C1;
+    --pale-blue:     #B5D4F4;
+    --sunshine:      #EF9F27;
+    --sunshine-light:#FAC775;
+    --off-white:     #F1EFE8;
+    --text-main:     #2B3A4A;
+    --text-sub:      #6B7B8C;
+    --card-bg:       #FFFFFF;
+    --border:        #E1EEFA;
+
+    /* お知らせ種別カラー(演算子カラーから間借り・design_system.md §演算子カラー準拠) */
+    --tag-update:  #2CA6A4; /* ティール = アップデート */
+    --tag-fix:     #B8763E; /* アンバーブラウン = 不具合修正 */
+    --tag-event:   #D0559C; /* マゼンタ = イベント */
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--off-white);
+    background-image: radial-gradient(circle at 15% 0%, var(--pale-blue) 0%, transparent 45%);
+    color: var(--text-main);
+    font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  header img {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(55, 138, 221, 0.25);
+  }
+
+  header .header-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--sky-blue-dark);
+  }
+
+  h1 {
+    font-size: 24px;
+    font-weight: 900;
+    color: var(--sky-blue-dark);
+    margin: 0 0 6px;
+    letter-spacing: 0.02em;
+  }
+
+  .lead {
+    font-size: 13px;
+    color: var(--text-sub);
+    margin-bottom: 32px;
+  }
+
+  .news-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .news-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 18px 20px;
+    box-shadow: 0 2px 10px rgba(55, 138, 221, 0.08);
+  }
+
+  .news-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .news-tag {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.02em;
+  }
+
+  .news-tag.update { background: var(--tag-update); }
+  .news-tag.fix    { background: var(--tag-fix); }
+  .news-tag.event  { background: var(--tag-event); }
+
+  .news-date {
+    font-size: 12px;
+    color: var(--text-sub);
+  }
+
+  .news-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 6px;
+  }
+
+  .news-body {
+    font-size: 14px;
+    color: var(--text-sub);
+    line-height: 1.75;
+  }
+
+  .news-body p + p {
+    margin-top: 10px;
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: 48px 20px;
+    color: var(--text-sub);
+    font-size: 14px;
+  }
+
+  footer {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    color: var(--text-sub);
+    font-size: 11px;
+    text-align: center;
+  }
+
+  footer a {
+    color: var(--sky-blue);
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <img src="assets/icon_popani.png" alt="PopDown Animals アイコン" />
+    <span class="header-title">PopDown Animals（ポプアニ）</span>
+  </header>
+
+  <h1>PopDown Animals お知らせ</h1>
+  <p class="lead">「PopDown Animals（ポプアニ）」のアップデート・不具合修正・イベントの情報をこちらでお知らせします。</p>
+
+  <ul class="news-list">
+
+    <!-- お知らせがまだない場合はこのまま。追加時は <li class="news-card"> を先頭(一番上)に追記していく -->
+    <li class="empty-state">
+      現在、新しいお知らせはありません。
+    </li>
+
+    <!-- 追加例(コピーして使ってください。種別タグは update / fix / event の3種):
+
+    <li class="news-card">
+      <div class="news-meta">
+        <span class="news-tag update">アップデート</span>
+        <span class="news-date">2026.__.__</span>
+      </div>
+      <div class="news-title">〇〇機能を追加しました</div>
+      <div class="news-body">
+        <p>本文をここに書きます。</p>
+      </div>
+    </li>
+
+    <li class="news-card">
+      <div class="news-meta">
+        <span class="news-tag fix">不具合修正</span>
+        <span class="news-date">2026.__.__</span>
+      </div>
+      <div class="news-title">〇〇の不具合を修正しました</div>
+      <div class="news-body">
+        <p>本文をここに書きます。</p>
+      </div>
+    </li>
+
+    <li class="news-card">
+      <div class="news-meta">
+        <span class="news-tag event">イベント</span>
+        <span class="news-date">2026.__.__</span>
+      </div>
+      <div class="news-title">〇〇イベントを開催中です</div>
+      <div class="news-body">
+        <p>本文をここに書きます。</p>
+      </div>
+    </li>
+
+    -->
+
+  </ul>
+
+  <footer>
+    石神井アプリケーションズ（Shakujii Applications）<br>
+    <a href="index.html">shakujii-apps.com</a>
+  </footer>
+
+</div>
+</body>
+</html>
