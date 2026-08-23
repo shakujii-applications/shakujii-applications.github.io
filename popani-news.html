@@ -55,6 +55,7 @@
     --tag-update:  #2CA6A4; /* ティール = アップデート */
     --tag-fix:     #B8763E; /* アンバーブラウン = 不具合修正 */
     --tag-event:   #D0559C; /* マゼンタ = イベント */
+    --tag-release: #EF9F27; /* サンシャインイエロー = リリース(初回公開) */
   }
 
   * { box-sizing: border-box; }
@@ -146,6 +147,7 @@
   .news-tag.update { background: var(--tag-update); }
   .news-tag.fix    { background: var(--tag-fix); }
   .news-tag.event  { background: var(--tag-event); }
+  .news-tag.release { background: var(--tag-release); }
 
   .news-date {
     font-size: 12px;
@@ -204,9 +206,37 @@
 
   <ul class="news-list">
 
-    <!-- お知らせがまだない場合はこのまま。追加時は <li class="news-card"> を先頭(一番上)に追記していく -->
-    <li class="empty-state">
-      現在、新しいお知らせはありません。
+    <li class="news-card">
+      <div class="news-meta">
+        <span class="news-tag update">アップデート</span>
+        <span class="news-date">2026.08.22</span>
+      </div>
+      <div class="news-title">アップデートv1.1を配信しました</div>
+      <div class="news-body">
+        <p>新しい演算子モードが遊べるようになりました。</p>
+        <p>
+          ・掛け算モード、割り算モード（2桁×2桁に見直し）、ランダムモードを追加<br>
+          ・迷ったときにそっと後押しする「アシスト機能」を追加<br>
+          ・動物たちの見た目をより見やすく調整<br>
+          ・ダッシュボードやアイコン表示を細かく改善
+        </p>
+        <p>これからも少しずつアップデートしていきます。引き続きよろしくお願いします。</p>
+      </div>
+    </li>
+
+    <li class="news-card">
+      <div class="news-meta">
+        <span class="news-tag release">リリース</span>
+        <span class="news-date">2026.08.18</span>
+      </div>
+      <div class="news-title">PopDown Animals（ポプアニ）をリリースしました</div>
+      <div class="news-body">
+        <p>
+          風船で浮いた動物たちを、計算で助け出すパズルゲーム「PopDown Animals（ポプアニ）」を公開しました。
+          5枚の手札から2枚を選んで、演算子でお題の数字を作る計算パズルです。正解を重ねるたびに風船が割れて、動物たちが少しずつ地上に近づいていきます。
+        </p>
+        <p>ダウンロードいただいた皆様、ありがとうございます。</p>
+      </div>
     </li>
 
     <!-- 追加例(コピーして使ってください。種別タグは update / fix / event の3種):
