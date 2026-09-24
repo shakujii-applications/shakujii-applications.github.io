@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy | プライバシーポリシー | Gym→Next | Shakujii Applications</title>
+<meta name="description" content="Gym→Next（ジムネク - 筋トレ記録）のプライバシーポリシーです。">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZED6MGTPJM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZED6MGTPJM');
+</script>
+
+<style>
+
+  :root {
+    --bg: #FAFAF8;
+    --text-main: #2E2E2E;
+    --text-sub: #767676;
+    --accent: #4A7C59;
+    --accent-light: #A8C3A8;
+    --border: #E5E3DE;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text-main);
+    font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+  header {
+    margin-bottom: 40px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  header a {
+    color: var(--text-sub);
+    text-decoration: none;
+    font-size: 14px;
+  }
+  header a:hover { color: var(--accent); }
+  h1 {
+    font-size: 26px;
+    font-weight: 700;
+    margin: 16px 0 4px;
+    letter-spacing: 0.02em;
+  }
+  h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 40px 0 12px;
+    padding-left: 12px;
+    border-left: 3px solid var(--accent);
+  }
+  p, li { font-size: 15px; }
+  ul { padding-left: 22px; }
+  li { margin-bottom: 6px; }
+  a { color: var(--accent); }
+  .meta {
+    color: var(--text-sub);
+    font-size: 13px;
+  }
+  .notice {
+    margin: 24px 0;
+    padding: 16px 18px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: #F4F3EF;
+    font-size: 14px;
+  }
+  .lang-divider {
+    margin: 72px 0 40px;
+    padding-top: 40px;
+    border-top: 2px solid var(--accent-light);
+    text-align: center;
+  }
+  .lang-divider span {
+    display: inline-block;
+    padding: 4px 16px;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--text-sub);
+    background: var(--bg);
+  }
+  .business-info {
+    font-size: 13px;
+    color: var(--text-sub);
+    background: transparent;
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+    margin-top: 32px;
+  }
+  .business-info li { margin-bottom: 4px; }
+  footer {
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    color: var(--text-sub);
+    font-size: 12px;
+  }
+  .lang-ja { color: var(--text-main); }
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a href="../index.html">&larr; Home</a>
+  </header>
+
+  <!--
+    PRE-RELEASE DRAFT / DO NOT PUBLISH YET
+    2026-09-24時点で②コーディングの実装監査が未完了。
+    公開前に以下を必ず確認して本文へ反映すること:
+    - HealthKit / Motion & Fitness / ヘルスケア関連APIの有無
+    - アカウント / ログイン機能の有無
+    - 独自サーバー送信・保存の有無
+    - Firebase Analytics / Crashlytics 等の第三者SDKの有無
+    - CSV出力経路が当方サーバーを経由しないこと
+    - StoreKit購入/Trial/Restore状態を当方サーバーへ送信・保存しないこと
+  -->
+
+  <h1>Privacy Policy</h1>
+  <div class="meta">Draft date: September 24, 2026</div>
+
+  <p style="margin-top:24px;">
+    This Privacy Policy (the “Policy”) explains how information is handled in connection with the mobile application
+    “Gym→Next” (the “App”), provided by Shakujii Applications (“we,” “us,” or “our”).
+  </p>
+
+  <h2>1. Workout Data Stored on Your Device</h2>
+  <p>
+    The App records workout-related information such as exercises, weight, repetitions, RIR, session dates,
+    program information, settings, and other data necessary to provide the App’s functionality.
+    Under the current v1 design, this data is stored locally on your device.
+  </p>
+
+  <h2>2. Backup and Export</h2>
+  <p>
+    The App’s local data may be included in the standard iOS device backup mechanism depending on your device and
+    backup settings. The v1 design does not provide CloudKit-based multi-device synchronization.
+  </p>
+  <p>
+    The App also provides CSV export so that you can export your workout records. You are responsible for the
+    destination and handling of files after export.
+  </p>
+
+  <h2>3. In-App Purchases</h2>
+  <p>
+    Purchases are processed through Apple’s App Store. We do not obtain your credit card number or other payment-card
+    information. Purchase, refund, and cancellation handling is subject to Apple’s applicable terms and policies.
+  </p>
+
+  <h2>4. Third-Party Services</h2>
+  <p>
+    The final version of this section will be confirmed after the v1 implementation audit is completed.
+    Any third-party analytics, crash-reporting, health-related APIs, or other external data transmissions used by the
+    App will be identified here before publication.
+  </p>
+
+  <h2>5. Data Retention and Deletion</h2>
+  <p>
+    Workout records and settings stored locally on your device remain on the device until deleted through the App,
+    removed by uninstalling the App, or otherwise removed through the device or backup environment, subject to the
+    behavior of iOS backups and restoration.
+  </p>
+
+  <h2>6. Purpose of Use</h2>
+  <ul>
+    <li>To provide workout recording, NEXT recommendations, history, settings, and related App functionality</li>
+    <li>To provide purchase and restore functionality through the App Store</li>
+    <li>To respond to inquiries and support requests</li>
+  </ul>
+
+  <h2>7. Changes to This Policy</h2>
+  <p>
+    We may update this Policy as necessary. The updated Policy becomes effective when posted on this page.
+  </p>
+
+  <p style="font-size:13px; color:var(--text-sub);">
+    This website (shakujii-apps.com) uses Google Analytics (GA4) to measure basic website traffic such as page views.
+    This is separate from the App’s data handling described above and applies only to browsing this website.
+  </p>
+
+  <h2>8. Contact / Business Information</h2>
+  <ul class="business-info">
+    <li>Business name: Shakujii Applications</li>
+    <li>Address: BIG Office Plaza Ikebukuro 1206, 2-62-8 Higashi-Ikebukuro, Toshima-ku, Tokyo, Japan</li>
+    <li>Contact: websupport@shakujii-apps.com</li>
+  </ul>
+
+  <div class="lang-divider"><span>日本語版は以下 ／ JAPANESE VERSION BELOW</span></div>
+
+  <div class="lang-ja">
+    <h1 style="font-size:22px; border:none; padding:0; margin-bottom:4px;">プライバシーポリシー</h1>
+    <div class="meta" style="margin-bottom:24px;">ドラフト作成日：2026年9月24日</div>
+
+    <p>
+      本ポリシーは、石神井アプリケーションズ（以下「当方」）が提供するモバイルアプリケーション
+      「Gym→Next（ジムネク - 筋トレ記録）」（以下「本アプリ」）における利用者の情報の取り扱いについて定めるものです。
+    </p>
+
+    <h2>1. 端末内に保存するワークアウト情報</h2>
+    <p>
+      本アプリは、種目、重量、回数、RIR、トレーニング日時、プログラム情報、各種設定その他、
+      本アプリの機能提供に必要なワークアウト関連情報を記録します。
+      現行のv1設計では、これらの情報は利用者の端末内に保存されます。
+    </p>
+
+    <h2>2. バックアップおよびCSVエクスポート</h2>
+    <p>
+      端末内に保存された情報は、利用者の端末設定等に応じて、iOS標準の端末バックアップの対象となる場合があります。
+      v1ではCloudKitによる複数端末同期機能は提供しません。
+    </p>
+    <p>
+      本アプリは、ワークアウト記録をCSV形式でエクスポートする機能を提供します。
+      エクスポート後のファイルの保存先および取り扱いは、利用者自身が管理するものとします。
+    </p>
+
+    <h2>3. アプリ内購入</h2>
+    <p>
+      アプリ内購入はAppleのApp Storeを通じて処理されます。
+      当方は、利用者のクレジットカード番号その他の決済カード情報を取得しません。
+      購入、返金その他の取扱いは、Appleの適用される規約およびポリシーに従います。
+    </p>
+
+    <h2>4. 第三者サービス</h2>
+    <p>
+      本節は、v1の実装監査完了後に最終確定します。
+      本アプリが第三者のアナリティクス、クラッシュレポート、健康関連APIその他の外部送信を利用する場合は、
+      公開前にその内容を本節へ明記します。
+    </p>
+
+    <h2>5. 情報の保存と削除</h2>
+    <p>
+      端末内に保存されたワークアウト記録および設定は、本アプリ内での削除、アプリのアンインストール、
+      その他端末またはバックアップ環境上での削除により消去されます。
+      ただし、iOSのバックアップおよび復元の挙動によっては、バックアップ内に情報が残る場合があります。
+    </p>
+
+    <h2>6. 利用目的</h2>
+    <ul>
+      <li>ワークアウト記録、NEXT提案、履歴、設定その他の本アプリ機能を提供するため</li>
+      <li>App Storeを通じた購入および復元機能を提供するため</li>
+      <li>お問い合わせおよびサポート対応のため</li>
+    </ul>
+
+    <h2>7. 本ポリシーの変更</h2>
+    <p>
+      当方は、必要に応じて本ポリシーを変更することがあります。
+      変更後の本ポリシーは、本ページに掲載した時点から効力を生じるものとします。
+    </p>
+
+    <p style="font-size:13px; color:var(--text-sub);">
+      補足：本ウェブサイト（shakujii-apps.com）は、閲覧状況（ページビュー等）の把握のためGoogleアナリティクス（GA4）を利用しています。
+      これは上記の本アプリに関する情報の取り扱いとは別のものであり、本ウェブサイトの閲覧にのみ適用されます。
+    </p>
+
+    <h2>8. お問い合わせ・事業者情報</h2>
+    <ul class="business-info">
+      <li>屋号：石神井アプリケーションズ（Shakujii Applications）</li>
+      <li>所在地：東京都豊島区東池袋2丁目62番8号 BIGオフィスプラザ池袋1206</li>
+      <li>連絡先：websupport@shakujii-apps.com</li>
+    </ul>
+  </div>
+
+  <footer>
+    石神井アプリケーションズ（Shakujii Applications）<br>
+    東京都豊島区東池袋2丁目62番8号 BIGオフィスプラザ池袋1206<br>
+    &copy; 2026 Shakujii Applications
+  </footer>
+</div>
+</body>
+</html>
