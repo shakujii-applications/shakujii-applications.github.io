@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>noteで「PopDown Animals」の開発秘話を公開しています | 石神井アプリケーションズ</title>
+  <link rel="icon" type="image/png" href="../assets/icon_popani.png" />
+  <meta name="description" content="noteで「PopDown Animals（ポプアニ）」の開発の裏側を紹介する記事を公開しています。" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZED6MGTPJM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZED6MGTPJM');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #FAFAF8;
+      --text: #2E2E2E;
+      --text-sub: #767676;
+      --green: #4A7C59;
+      --border: #E5E3DE;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.9;
+      font-size: 16px;
+    }
+    header { border-bottom: 1px solid var(--border); padding: 20px 24px; }
+    header a {
+      font-size: 14px; font-weight: 700; color: var(--text); text-decoration: none;
+    }
+    .container { max-width: 640px; margin: 0 auto; padding: 64px 24px; }
+    .back-link {
+      display: inline-block; margin-bottom: 32px; font-size: 13px;
+      color: var(--text-sub); text-decoration: none;
+    }
+    .back-link:hover { color: var(--green); }
+    .news-date { font-size: 13px; color: var(--text-sub); margin-bottom: 12px; }
+    h1 { font-size: 26px; font-weight: 700; margin-bottom: 32px; line-height: 1.5; }
+    .body-text p { margin-bottom: 20px; font-size: 15px; }
+    .note-links { margin-top: 32px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .note-btn {
+      display: inline-flex; align-items: center; padding: 12px 24px;
+      border: 2px solid var(--green); border-radius: 8px;
+      font-size: 14px; font-weight: 700; color: var(--green);
+      text-decoration: none; transition: background 0.15s, color 0.15s;
+    }
+    .note-btn:hover { background: var(--green); color: #fff; }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="../index.html">石神井アプリケーションズ</a>
+  </header>
+
+  <div class="container">
+    <a href="../index.html#news" class="back-link">← お知らせ一覧へ戻る</a>
+
+    <p class="news-date">2026.09.27</p>
+    <h1>noteで「PopDown Animals」の開発秘話を公開しています</h1>
+
+    <div class="body-text">
+      <p>
+        noteで、第一弾アプリ「PopDown Animals（ポプアニ）」の開発の裏側を紹介する記事を公開しています。
+      </p>
+      <p>
+        未経験からアプリを企画し、AIを活用しながらリリースするまでに試したことや、制作中に起きたことなどをまとめています。
+      </p>
+      <p>
+        全5回の連載として公開しています。ご興味がありましたら、ぜひご覧ください。
+      </p>
+    </div>
+
+    <div class="note-links">
+      <a href="https://note.com/keen_worm689/m/m08485b74bd67" class="note-btn" target="_blank" rel="noopener">noteで連載を見る</a>
+    </div>
+  </div>
+</body>
+</html>
