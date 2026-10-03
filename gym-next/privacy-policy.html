@@ -119,81 +119,95 @@
     <a href="../index.html">&larr; Home</a>
   </header>
 
-  <!--
-    PRE-RELEASE DRAFT / DO NOT PUBLISH YET
-    2026-09-24時点で②コーディングの実装監査が未完了。
-    公開前に以下を必ず確認して本文へ反映すること:
-    - HealthKit / Motion & Fitness / ヘルスケア関連APIの有無
-    - アカウント / ログイン機能の有無
-    - 独自サーバー送信・保存の有無
-    - Firebase Analytics / Crashlytics 等の第三者SDKの有無
-    - CSV出力経路が当方サーバーを経由しないこと
-    - StoreKit購入/Trial/Restore状態を当方サーバーへ送信・保存しないこと
-  -->
-
   <h1>Privacy Policy</h1>
-  <div class="meta">Draft date: September 24, 2026</div>
+  <div class="meta">Effective date: October 3, 2026</div>
 
   <p style="margin-top:24px;">
     This Privacy Policy (the “Policy”) explains how information is handled in connection with the mobile application
     “Gym→Next” (the “App”), provided by Shakujii Applications (“we,” “us,” or “our”).
   </p>
 
-  <h2>1. Workout Data Stored on Your Device</h2>
+  <h2>1. Information Handled by the App</h2>
   <p>
     The App records workout-related information such as exercises, weight, repetitions, RIR, session dates,
-    program information, settings, and other data necessary to provide the App’s functionality.
-    Under the current v1 design, this data is stored locally on your device.
+    program information, equipment/load settings, and other settings necessary to provide the App’s functionality.
+    This information is stored locally on your device. The App does not provide its own account registration or login
+    system and does not transmit or store these workout records, settings, or purchase information on servers operated
+    by Shakujii Applications.
+  </p>
+  <p>
+    If you contact us by email, we may receive the email address, message content, and other information you voluntarily
+    provide for the purpose of responding to your inquiry.
   </p>
 
-  <h2>2. Backup and Export</h2>
+  <h2>2. Backup, Export, and Synchronization</h2>
   <p>
-    The App’s local data may be included in the standard iOS device backup mechanism depending on your device and
-    backup settings. The v1 design does not provide CloudKit-based multi-device synchronization.
+    Local App data may be included in the standard iOS device backup mechanism depending on your device, operating
+    system, and backup settings. The App does not provide CloudKit/iCloud-based multi-device synchronization and does
+    not guarantee that any particular backup or restoration will succeed.
   </p>
   <p>
-    The App also provides CSV export so that you can export your workout records. You are responsible for the
-    destination and handling of files after export.
-  </p>
-
-  <h2>3. In-App Purchases</h2>
-  <p>
-    Purchases are processed through Apple’s App Store. We do not obtain your credit card number or other payment-card
-    information. Purchase, refund, and cancellation handling is subject to Apple’s applicable terms and policies.
+    The App can generate a CSV file from workout history and hand that file to the iOS share sheet. This export does
+    not pass through servers operated by Shakujii Applications. Data may leave the device when you choose a third-party
+    app, cloud service, or other destination from the share sheet. CSV export is not a full backup of the App and the
+    App does not provide CSV import for restoring App state.
   </p>
 
-  <h2>4. Third-Party Services</h2>
+  <h2>3. In-App Purchases and Trial</h2>
   <p>
-    The final version of this section will be confirmed after the v1 implementation audit is completed.
-    Any third-party analytics, crash-reporting, health-related APIs, or other external data transmissions used by the
-    App will be identified here before publication.
+    The App uses Apple’s StoreKit and App Store services for a 28-day trial and a non-consumable full-access purchase.
+    Apple processes the transactions. The App may receive verified transaction information such as product identifiers
+    and purchase dates from Apple on the device in order to determine access rights. We do not obtain your credit card
+    number or other payment-card information and do not send purchase information to servers operated by Shakujii Applications.
+    Refunds and transaction handling are subject to Apple’s applicable terms and policies.
+  </p>
+  <p>
+    Restoring purchases restores eligible purchase rights through Apple; it does not restore workout history or other
+    locally stored App data.
+  </p>
+
+  <h2>4. External Services and Data Transmission</h2>
+  <p>
+    The App does not use HealthKit, Motion &amp; Fitness, or similar health-data APIs in the current version. It also does
+    not include third-party analytics or crash-reporting SDKs such as Firebase Analytics, Firebase Crashlytics, or Sentry.
+  </p>
+  <p>
+    Network communication may nevertheless occur when the App communicates with Apple’s StoreKit/App Store services,
+    when you open the Terms of Service or Privacy Policy in an external browser, or when you export a CSV file through
+    the iOS share sheet. The App does not append workout records, purchase information, or user identifiers to the
+    legal-page URLs it opens.
   </p>
 
   <h2>5. Data Retention and Deletion</h2>
   <p>
-    Workout records and settings stored locally on your device remain on the device until deleted through the App,
-    removed by uninstalling the App, or otherwise removed through the device or backup environment, subject to the
-    behavior of iOS backups and restoration.
+    Workout records and settings stored locally remain in the App’s local storage until they are removed through device
+    or App data management, including uninstalling the App. Copies may remain in an iOS device backup according to your
+    backup settings and Apple’s backup behavior. Files exported by you remain wherever you choose to save or share them.
+    Inquiry emails may be retained as reasonably necessary to respond to and manage support requests.
   </p>
 
   <h2>6. Purpose of Use</h2>
   <ul>
     <li>To provide workout recording, NEXT recommendations, history, settings, and related App functionality</li>
+    <li>To determine trial and purchase access rights using Apple’s StoreKit/App Store services</li>
     <li>To provide purchase and restore functionality through the App Store</li>
     <li>To respond to inquiries and support requests</li>
   </ul>
 
-  <h2>7. Changes to This Policy</h2>
+  <h2>7. Website Analytics</h2>
+  <p>
+    This website (shakujii-apps.com), including this Policy page, uses Google Analytics 4 (GA4) to understand website
+    usage. GA4 may use first-party cookies and may collect information such as page views, session information,
+    approximate location, browser and device information. Information is transmitted to Google in connection with
+    providing the analytics service. This website analytics is separate from the App’s own data handling described above.
+  </p>
+
+  <h2>8. Changes to This Policy</h2>
   <p>
     We may update this Policy as necessary. The updated Policy becomes effective when posted on this page.
   </p>
 
-  <p style="font-size:13px; color:var(--text-sub);">
-    This website (shakujii-apps.com) uses Google Analytics (GA4) to measure basic website traffic such as page views.
-    This is separate from the App’s data handling described above and applies only to browsing this website.
-  </p>
-
-  <h2>8. Contact / Business Information</h2>
+  <h2>9. Contact / Business Information</h2>
   <ul class="business-info">
     <li>Business name: Shakujii Applications</li>
     <li>Address: BIG Office Plaza Ikebukuro 1206, 2-62-8 Higashi-Ikebukuro, Toshima-ku, Tokyo, Japan</li>
@@ -204,70 +218,93 @@
 
   <div class="lang-ja">
     <h1 style="font-size:22px; border:none; padding:0; margin-bottom:4px;">プライバシーポリシー</h1>
-    <div class="meta" style="margin-bottom:24px;">ドラフト作成日：2026年9月24日</div>
+    <div class="meta" style="margin-bottom:24px;">制定日：2026年10月3日</div>
 
     <p>
       本ポリシーは、石神井アプリケーションズ（以下「当方」）が提供するモバイルアプリケーション
       「Gym→Next（ジムネク - 筋トレ記録）」（以下「本アプリ」）における利用者の情報の取り扱いについて定めるものです。
     </p>
 
-    <h2>1. 端末内に保存するワークアウト情報</h2>
+    <h2>1. 本アプリが取り扱う情報</h2>
     <p>
-      本アプリは、種目、重量、回数、RIR、トレーニング日時、プログラム情報、各種設定その他、
-      本アプリの機能提供に必要なワークアウト関連情報を記録します。
-      現行のv1設計では、これらの情報は利用者の端末内に保存されます。
+      本アプリは、種目、重量、回数、RIR、トレーニング日時、プログラム情報、器具・重量設定、各種設定その他、
+      本アプリの機能提供に必要なワークアウト関連情報を記録します。これらの情報は利用者の端末内に保存されます。
+      本アプリには独自のアカウント登録・ログイン機能はなく、これらのワークアウト記録、設定または購入情報を
+      石神井アプリケーションズが運営する独自サーバーへ送信・保存する仕組みはありません。
+    </p>
+    <p>
+      利用者がお問い合わせメールを送信した場合、当方は返信・サポート対応のため、メールアドレス、本文その他
+      利用者が任意に提供した情報を受領することがあります。
     </p>
 
-    <h2>2. バックアップおよびCSVエクスポート</h2>
+    <h2>2. バックアップ、CSVエクスポートおよび同期</h2>
     <p>
-      端末内に保存された情報は、利用者の端末設定等に応じて、iOS標準の端末バックアップの対象となる場合があります。
-      v1ではCloudKitによる複数端末同期機能は提供しません。
+      端末内に保存された情報は、利用者の端末、OSおよびバックアップ設定等に応じて、iOS標準の端末バックアップの
+      対象となる場合があります。本アプリはCloudKit／iCloudによる独自の複数端末同期機能を提供しておらず、
+      特定のバックアップまたは復元が必ず成功することを保証しません。
     </p>
     <p>
-      本アプリは、ワークアウト記録をCSV形式でエクスポートする機能を提供します。
-      エクスポート後のファイルの保存先および取り扱いは、利用者自身が管理するものとします。
-    </p>
-
-    <h2>3. アプリ内購入</h2>
-    <p>
-      アプリ内購入はAppleのApp Storeを通じて処理されます。
-      当方は、利用者のクレジットカード番号その他の決済カード情報を取得しません。
-      購入、返金その他の取扱いは、Appleの適用される規約およびポリシーに従います。
+      本アプリは、ワークアウト履歴からCSVファイルを生成し、iOSの共有シートへ渡す機能を提供します。
+      CSVは当方の独自サーバーを経由しませんが、利用者が共有先として第三者アプリ、クラウドサービスその他の保存先を
+      選択した場合、当該共有先へデータが移動することがあります。CSVエクスポートは本アプリ全体のバックアップ機能ではなく、
+      CSVからアプリ状態を復元するインポート機能も提供していません。
     </p>
 
-    <h2>4. 第三者サービス</h2>
+    <h2>3. アプリ内購入およびトライアル</h2>
     <p>
-      本節は、v1の実装監査完了後に最終確定します。
-      本アプリが第三者のアナリティクス、クラッシュレポート、健康関連APIその他の外部送信を利用する場合は、
-      公開前にその内容を本節へ明記します。
+      本アプリは、AppleのStoreKitおよびApp Storeの仕組みを利用して、28日間のトライアルと継続利用のための
+      非消耗型アプリ内購入を提供します。取引はAppleが処理します。本アプリはアクセス権の判定のため、Appleから
+      検証済みのProduct IDや購入日時等の取引情報を端末上で取得する場合がありますが、当方はクレジットカード番号
+      その他の決済カード情報を取得せず、購入情報を当方の独自サーバーへ送信しません。
+      返金その他の取扱いはAppleの適用される規約およびポリシーに従います。
+    </p>
+    <p>
+      「購入を復元」は、Appleを通じて対象となる購入権利を復元する機能であり、ワークアウト履歴その他の端末内データを
+      復元する機能ではありません。
+    </p>
+
+    <h2>4. 外部サービスおよび外部通信</h2>
+    <p>
+      現行版の本アプリはHealthKit、Motion &amp; Fitnessその他これらに類する健康データAPIを利用しません。
+      また、Firebase Analytics、Firebase Crashlytics、Sentry等の第三者Analytics／Crash SDKを組み込んでいません。
+    </p>
+    <p>
+      一方、StoreKit／App Storeを利用する際のAppleとの通信、利用規約・プライバシーポリシーを外部ブラウザで開く際の通信、
+      CSVをiOS共有シートから共有する際の通信は発生する場合があります。法務ページを開くURLには、ワークアウト記録、
+      購入情報または利用者識別子を付加する実装はありません。
     </p>
 
     <h2>5. 情報の保存と削除</h2>
     <p>
-      端末内に保存されたワークアウト記録および設定は、本アプリ内での削除、アプリのアンインストール、
-      その他端末またはバックアップ環境上での削除により消去されます。
-      ただし、iOSのバックアップおよび復元の挙動によっては、バックアップ内に情報が残る場合があります。
+      端末内のワークアウト記録および設定は、アプリのアンインストールその他の端末・アプリデータ管理により削除されるまで
+      ローカル領域に保存されます。iOSのバックアップ設定やAppleのバックアップ挙動によっては、バックアップ内に情報が残る
+      場合があります。利用者自身がCSVとして保存・共有したファイルは、利用者が選択した保存先に残ります。
+      お問い合わせメールは、返信およびサポート対応に合理的に必要な範囲で保管する場合があります。
     </p>
 
     <h2>6. 利用目的</h2>
     <ul>
       <li>ワークアウト記録、NEXT提案、履歴、設定その他の本アプリ機能を提供するため</li>
-      <li>App Storeを通じた購入および復元機能を提供するため</li>
+      <li>AppleのStoreKit／App Storeを利用してトライアルおよび購入によるアクセス権を判定するため</li>
+      <li>App Storeを通じた購入および購入権利の復元機能を提供するため</li>
       <li>お問い合わせおよびサポート対応のため</li>
     </ul>
 
-    <h2>7. 本ポリシーの変更</h2>
+    <h2>7. 本ウェブサイトのアクセス解析</h2>
+    <p>
+      本ウェブサイト（shakujii-apps.com。本ポリシーページを含みます）は、ウェブサイトの利用状況を把握するため
+      Google Analytics 4（GA4）を利用しています。GA4ではファーストパーティCookieが使用される場合があり、
+      ページ閲覧、セッション情報、おおよその地域、ブラウザ・端末情報等が収集され、アクセス解析サービスの提供に伴い
+      Googleへ送信されます。これは上記の本アプリ自体の情報取扱いとは別のものです。
+    </p>
+
+    <h2>8. 本ポリシーの変更</h2>
     <p>
       当方は、必要に応じて本ポリシーを変更することがあります。
       変更後の本ポリシーは、本ページに掲載した時点から効力を生じるものとします。
     </p>
 
-    <p style="font-size:13px; color:var(--text-sub);">
-      補足：本ウェブサイト（shakujii-apps.com）は、閲覧状況（ページビュー等）の把握のためGoogleアナリティクス（GA4）を利用しています。
-      これは上記の本アプリに関する情報の取り扱いとは別のものであり、本ウェブサイトの閲覧にのみ適用されます。
-    </p>
-
-    <h2>8. お問い合わせ・事業者情報</h2>
+    <h2>9. お問い合わせ・事業者情報</h2>
     <ul class="business-info">
       <li>屋号：石神井アプリケーションズ（Shakujii Applications）</li>
       <li>所在地：東京都豊島区東池袋2丁目62番8号 BIGオフィスプラザ池袋1206</li>

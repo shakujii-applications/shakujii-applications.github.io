@@ -120,7 +120,7 @@
   </header>
 
   <h1>Terms of Service</h1>
-  <div class="meta">Draft date: September 24, 2026</div>
+  <div class="meta">Effective date: October 3, 2026</div>
 
   <p style="margin-top:24px;">
     These Terms of Service (the “Terms”) govern your use of the mobile application “Gym→Next” (the “App”)
@@ -151,9 +151,15 @@
 
   <h2>4. In-App Purchase and Trial</h2>
   <p>
-    The App provides a 28-day trial period and a non-consumable in-app purchase for continued access.
-    Purchases are processed by Apple through the App Store. Pricing and transaction handling are displayed and
-    processed through the App Store. Refunds and related requests are handled in accordance with Apple’s applicable policies.
+    The App provides a 28-day trial through a free non-consumable in-app purchase and provides continued full access
+    through a separate non-consumable in-app purchase. Before starting the trial, the App displays the trial duration,
+    the functionality that will become unavailable after the trial, and the price required for full access.
+    Transactions are processed by Apple through the App Store, and the actual price displayed in the App is obtained
+    through StoreKit. Refunds and related requests are handled in accordance with Apple’s applicable policies.
+  </p>
+  <p>
+    Restoring purchases restores eligible purchase rights through Apple. It does not restore workout history or other
+    locally stored App data.
   </p>
 
   <h2>5. Safe Use of the App</h2>
@@ -177,11 +183,15 @@
     You remain responsible for adjusting, declining, or discontinuing a recommendation based on your own condition.
   </p>
 
-  <h2>6. Data and Backup</h2>
+  <h2>6. Data, Backup, and Export</h2>
   <p>
-    The App stores workout records locally on your device. Depending on your device settings, such data may be
-    included in the standard iOS backup mechanism. The v1 version does not provide CloudKit-based multi-device synchronization.
-    The App also provides CSV export for workout records.
+    The App stores workout records locally on your device. Depending on your device, operating system, and backup
+    settings, such data may be included in the standard iOS backup mechanism. The App does not provide
+    CloudKit/iCloud-based multi-device synchronization and does not guarantee that any particular backup or restoration will succeed.
+  </p>
+  <p>
+    The App can export workout history as CSV through the iOS share sheet. CSV export is not a full backup of the App,
+    and the App does not provide CSV import for restoring App state.
   </p>
 
   <h2>7. Disclaimer</h2>
@@ -221,7 +231,7 @@
 
   <div class="lang-ja">
     <h1 style="font-size:22px; border:none; padding:0; margin-bottom:4px;">利用規約</h1>
-    <div class="meta" style="margin-bottom:24px;">ドラフト作成日：2026年9月24日</div>
+    <div class="meta" style="margin-bottom:24px;">制定日：2026年10月3日</div>
 
     <p>
       本利用規約（以下「本規約」）は、石神井アプリケーションズ（以下「当方」）が提供する
@@ -251,9 +261,14 @@
 
     <h2>4. アプリ内購入およびトライアル</h2>
     <p>
-      本アプリは、28日間のトライアル期間と、継続利用のための非消耗型アプリ内購入を提供します。
-      購入はAppleのApp Storeを通じて処理されます。価格その他の取引条件はApp Store上で表示され、
-      返金その他の取扱いはAppleの適用されるポリシーに従います。
+      本アプリは、無料の非消耗型アプリ内購入による28日間のトライアルと、継続して全機能を利用するための
+      別の非消耗型アプリ内購入を提供します。トライアル開始前に、トライアル期間、終了後に利用できなくなる機能、
+      および全機能を利用するために必要な価格をアプリ内で表示します。取引はAppleのApp Storeを通じて処理され、
+      アプリ内に表示する実際の価格はStoreKitから取得します。返金その他の取扱いはAppleの適用されるポリシーに従います。
+    </p>
+    <p>
+      「購入を復元」は、Appleを通じて対象となる購入権利を復元する機能であり、ワークアウト履歴その他の端末内データを
+      復元する機能ではありません。
     </p>
 
     <h2>5. 安全な利用について</h2>
@@ -275,12 +290,15 @@
       利用者は、自身の状態に応じて提案内容を調整または採用しない判断を行うものとします。
     </p>
 
-    <h2>6. データおよびバックアップ</h2>
+    <h2>6. データ、バックアップおよびエクスポート</h2>
     <p>
-      本アプリはワークアウト記録を利用者の端末内に保存します。
-      端末設定等に応じて、これらのデータはiOS標準のバックアップ対象となる場合があります。
-      v1ではCloudKitによる複数端末同期機能は提供しません。
-      また、本アプリはワークアウト記録のCSVエクスポート機能を提供します。
+      本アプリはワークアウト記録を利用者の端末内に保存します。利用者の端末、OSおよびバックアップ設定等に応じて、
+      これらのデータはiOS標準のバックアップ対象となる場合があります。本アプリはCloudKit／iCloudによる独自の
+      複数端末同期機能を提供せず、特定のバックアップまたは復元が必ず成功することを保証しません。
+    </p>
+    <p>
+      本アプリは、ワークアウト履歴をCSV形式で生成し、iOSの共有シートから書き出す機能を提供します。
+      CSVエクスポートは本アプリ全体のバックアップ機能ではなく、CSVからアプリ状態を復元するインポート機能も提供していません。
     </p>
 
     <h2>7. 免責事項</h2>
