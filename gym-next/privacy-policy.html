@@ -111,16 +111,129 @@
   }
   .lang-ja { color: var(--text-main); }
 
+  nav { margin: 0 0 28px; font-size: 14px; }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <a href="../index.html">&larr; Home</a>
+    <a id="home-link" href="../index.html">&larr; Home</a>
   </header>
 
+  <nav aria-label="Language"><a href="#ja">日本語</a> / <a href="#en">English</a></nav>
+  <section id="ja" lang="ja" class="lang-ja">
+    <h1 style="font-size:22px; border:none; padding:0; margin-bottom:4px;">プライバシーポリシー</h1>
+    <div class="meta" style="margin-bottom:24px;">改定日：2026年11月18日</div>
+
+    <p>
+      本ポリシーは、石神井アプリケーションズ（以下「当方」）が提供するモバイルアプリケーション
+      「ジムネク - 筋トレ記録（ブランド名：Gym→Next）」（以下「本アプリ」）における利用者の情報の取り扱いについて定めるものです。
+    </p>
+
+    <h2>1. 本アプリが取り扱う情報</h2>
+    <p>
+      本アプリは、種目、重量、回数、RIR、トレーニング日時、プログラム情報、器具・重量設定、各種設定その他、
+      本アプリの機能提供に必要なワークアウト関連情報を記録します。これらの情報は利用者の端末内に保存されます。
+      本アプリには独自のアカウント登録・ログイン機能はなく、これらのワークアウト記録、設定または購入情報を
+      石神井アプリケーションズが運営する独自サーバーへ送信・保存する仕組みはありません。
+    </p>
+    <p>
+      利用者がお問い合わせメールを送信した場合、当方は返信・サポート対応のため、メールアドレス、本文その他
+      利用者が任意に提供した情報を受領することがあります。
+    </p>
+
+    <p>
+      保存内容の保護が有効になっている場合、本アプリは、問題の調査を支援するためのサポート用診断情報を生成できます。診断情報には、アプリのバージョン・build、OSのバージョン、書き出し日時、保護・理由コード、検査分類、移行・journalの状態、端末内に保存されたrecordの件数等が含まれる場合があります。基本の診断情報には、トレーニング記録、重量、回数、トレーニング日時、Session ID、購入・Trial情報、Apple ID、取引IDは含まれません。
+    </p>
+    <p>
+      利用者が書き出しごとに「詳細情報を含める」を明示的にONにした場合に限り、Gym ID、種目ID、Machine ID等の内部record keyが含まれる場合があります。これらのIDから、登録しているジム、種目またはマシンとの関係が分かる場合があります。「詳細情報を含める」は既定でOFFであり、選択内容は次回へ引き継ぎません。
+    </p>
+    <p>
+      サポート用診断情報は共有前に画面へ全文表示され、自動送信されません。本アプリは一時的なテキストファイルを作成してiOSの共有シートへ渡し、利用者自身が共有先または保存先を選択します。本アプリが作成した一時ファイルは共有処理の終了後に削除されます。利用者が石神井アプリケーションズを共有先として選択した場合、当方はサポート対応のため当該診断情報を受領し、問題の調査および回答に利用することがあります。
+    </p>
+    <h2>2. バックアップ、CSVエクスポートおよび同期</h2>
+    <p>
+      端末内に保存された情報は、利用者の端末、OSおよびバックアップ設定等に応じて、iOS標準の端末バックアップの
+      対象となる場合があります。本アプリはCloudKit／iCloudによる独自の複数端末同期機能を提供しておらず、
+      特定のバックアップまたは復元が必ず成功することを保証しません。
+    </p>
+    <p>
+      本アプリは、ワークアウト履歴からCSVファイルを生成し、iOSの共有シートへ渡す機能を提供します。
+      CSVは当方の独自サーバーを経由しませんが、利用者が共有先として第三者アプリ、クラウドサービスその他の保存先を
+      選択した場合、当該共有先へデータが移動することがあります。CSVエクスポートは本アプリ全体のバックアップ機能ではなく、
+      CSVからアプリ状態を復元するインポート機能も提供していません。
+    </p>
+
+    <h2>3. アプリ内購入およびトライアル</h2>
+    <p>
+      本アプリは、AppleのStoreKitおよびApp Storeの仕組みを利用して、28日間のトライアルと継続利用のための
+      非消耗型アプリ内購入を提供します。取引はAppleが処理します。本アプリはアクセス権の判定のため、Appleから
+      検証済みのProduct IDや購入日時等の取引情報を端末上で取得する場合がありますが、当方はクレジットカード番号
+      その他の決済カード情報を取得せず、購入情報を当方の独自サーバーへ送信しません。
+      返金その他の取扱いはAppleの適用される規約およびポリシーに従います。
+    </p>
+    <p>
+      「購入を復元」は、Appleを通じて対象となる購入権利を復元する機能であり、ワークアウト履歴その他の端末内データを
+      復元する機能ではありません。
+    </p>
+
+    <h2>4. 外部サービスおよび外部通信</h2>
+    <p>
+      現行版の本アプリはHealthKit、Motion &amp; Fitnessその他これらに類する健康データAPIを利用しません。
+      また、Firebase Analytics、Firebase Crashlytics、Sentry等の第三者Analytics／Crash SDKを組み込んでいません。
+    </p>
+    <p>
+      一方、StoreKit／App Storeを利用する際のAppleとの通信、利用規約・プライバシーポリシーを外部ブラウザで開く際の通信、
+      CSVをiOS共有シートから共有する際の通信は発生する場合があります。法務ページを開くURLには、ワークアウト記録、
+      購入情報または利用者識別子を付加する実装はありません。
+      また、利用者がサポート用診断情報の共有先としてメール、クラウドサービスその他の外部サービスを選択した場合、当該診断情報が利用者の選択した共有先へ送信される場合があります。
+    </p>
+
+    <h2>5. 情報の保存と削除</h2>
+    <p>
+      端末内のワークアウト記録および設定は、アプリのアンインストールその他の端末・アプリデータ管理により削除されるまで
+      ローカル領域に保存されます。iOSのバックアップ設定やAppleのバックアップ挙動によっては、バックアップ内に情報が残る
+      場合があります。利用者自身がCSVとして保存・共有したファイルは、利用者が選択した保存先に残ります。
+
+    </p>
+
+    <p>利用者が任意に当方へ送信したお問い合わせメールおよびサポート用診断情報は、該当する問い合わせの調査、回答およびサポート管理に合理的に必要な期間に限り保管する場合があります。ただし、法令上の義務、セキュリティ対応または紛争対応のために、より長い保管が必要となる場合があります。サポート用診断情報を広告またはマーケティング目的に利用しません。</p>
+    <p>当方が保持するお問い合わせメールまたはサポート用診断情報の削除を希望する場合は、本ポリシー記載のサポート窓口へ依頼できます。ただし、法令上の義務、セキュリティ対応または紛争対応のために保持が必要な情報を除きます。</p>
+
+    <h2>6. 利用目的</h2>
+    <ul>
+      <li>ワークアウト記録、NEXT提案、履歴、設定その他の本アプリ機能を提供するため</li>
+      <li>AppleのStoreKit／App Storeを利用してトライアルおよび購入によるアクセス権を判定するため</li>
+      <li>App Storeを通じた購入および購入権利の復元機能を提供するため</li>
+      <li>お問い合わせおよびサポート対応のため</li>
+      <li>利用者が任意に共有した診断情報を用いて、保存保護に関する問題を調査し、カスタマーサポートを提供するため</li>
+    </ul>
+
+    <h2>7. 本ウェブサイトのアクセス解析</h2>
+    <p>
+      本ウェブサイト（shakujii-apps.com。本ポリシーページを含みます）は、ウェブサイトの利用状況を把握するため
+      Google Analytics 4（GA4）を利用しています。GA4ではファーストパーティCookieが使用される場合があり、
+      ページ閲覧、セッション情報、おおよその地域、ブラウザ・端末情報等が収集され、アクセス解析サービスの提供に伴い
+      Googleへ送信されます。これは上記の本アプリ自体の情報取扱いとは別のものです。
+    </p>
+
+    <h2>8. 本ポリシーの変更</h2>
+    <p>
+      当方は、必要に応じて本ポリシーを変更することがあります。
+      変更後の本ポリシーは、本ページに掲載した時点から効力を生じるものとします。
+    </p>
+
+    <h2>9. お問い合わせ・事業者情報</h2>
+    <ul class="business-info">
+      <li>屋号：石神井アプリケーションズ（Shakujii Applications）</li>
+      <li>所在地：東京都豊島区東池袋2丁目62番8号 BIGオフィスプラザ池袋1206</li>
+      <li>連絡先：websupport@shakujii-apps.com</li>
+    </ul>
+  </section>
+  <div class="lang-divider"><span>ENGLISH VERSION BELOW</span></div>
+  <section id="en" lang="en">
   <h1>Privacy Policy</h1>
-  <div class="meta">Effective date: October 3, 2026</div>
+  <div class="meta">Effective date: November 18, 2026</div>
 
   <p style="margin-top:24px;">
     This Privacy Policy (the “Policy”) explains how information is handled in connection with the mobile application
@@ -140,6 +253,15 @@
     provide for the purpose of responding to your inquiry.
   </p>
 
+  <p>
+    When storage protection is active, the App can generate support diagnostic information to help investigate the issue. This may include the App version and build, operating system version, export time, protection and reason codes, inspection classifications, migration or journal state, and counts of locally stored records. By default, the diagnostic information does not include workout records, weight, repetitions, workout dates, session IDs, purchase or trial information, Apple ID, or transaction identifiers.
+  </p>
+  <p>
+    If you explicitly enable “Include detailed information” for an export, the diagnostic information may also include internal record keys such as Gym ID, exercise ID, or Machine ID. These identifiers may reveal a relationship to a registered gym, exercise, or machine. Detailed information is off by default and must be enabled for each export.
+  </p>
+  <p>
+    Support diagnostic information is shown to you before sharing and is not sent automatically. The App creates a temporary text file and passes it to the iOS share sheet, where you choose the recipient or destination. The temporary file created by the App is deleted after the share operation finishes. If you choose to send the information to Shakujii Applications, we may receive and use it to investigate and respond to your support request.
+  </p>
   <h2>2. Backup, Export, and Synchronization</h2>
   <p>
     Local App data may be included in the standard iOS device backup mechanism depending on your device, operating
@@ -176,6 +298,7 @@
     when you open the Terms of Service or Privacy Policy in an external browser, or when you export a CSV file through
     the iOS share sheet. The App does not append workout records, purchase information, or user identifiers to the
     legal-page URLs it opens.
+    Network communication may also occur if you choose email, a cloud service, or another external service as the destination for support diagnostic information through the iOS share sheet.
   </p>
 
   <h2>5. Data Retention and Deletion</h2>
@@ -183,8 +306,11 @@
     Workout records and settings stored locally remain in the App’s local storage until they are removed through device
     or App data management, including uninstalling the App. Copies may remain in an iOS device backup according to your
     backup settings and Apple’s backup behavior. Files exported by you remain wherever you choose to save or share them.
-    Inquiry emails may be retained as reasonably necessary to respond to and manage support requests.
+
   </p>
+
+  <p>Inquiry emails and support diagnostic information that you voluntarily send to us may be retained only as reasonably necessary to investigate, respond to, and manage the relevant support request, or for a longer period where required for legal, security, or dispute-resolution purposes. We do not use support diagnostic information for advertising or marketing.</p>
+  <p>You may contact the support address stated in this Policy to request deletion of inquiry emails or support diagnostic information retained by us, except information that must be retained for legal, security, or dispute-resolution purposes.</p>
 
   <h2>6. Purpose of Use</h2>
   <ul>
@@ -192,6 +318,7 @@
     <li>To determine trial and purchase access rights using Apple’s StoreKit/App Store services</li>
     <li>To provide purchase and restore functionality through the App Store</li>
     <li>To respond to inquiries and support requests</li>
+    <li>To investigate storage-protection issues and provide customer support using diagnostic information that you voluntarily share</li>
   </ul>
 
   <h2>7. Website Analytics</h2>
@@ -214,103 +341,7 @@
     <li>Contact: websupport@shakujii-apps.com</li>
   </ul>
 
-  <div class="lang-divider"><span>日本語版は以下 ／ JAPANESE VERSION BELOW</span></div>
-
-  <div class="lang-ja">
-    <h1 style="font-size:22px; border:none; padding:0; margin-bottom:4px;">プライバシーポリシー</h1>
-    <div class="meta" style="margin-bottom:24px;">制定日：2026年10月3日</div>
-
-    <p>
-      本ポリシーは、石神井アプリケーションズ（以下「当方」）が提供するモバイルアプリケーション
-      「ジムネク - 筋トレ記録（ブランド名：Gym→Next）」（以下「本アプリ」）における利用者の情報の取り扱いについて定めるものです。
-    </p>
-
-    <h2>1. 本アプリが取り扱う情報</h2>
-    <p>
-      本アプリは、種目、重量、回数、RIR、トレーニング日時、プログラム情報、器具・重量設定、各種設定その他、
-      本アプリの機能提供に必要なワークアウト関連情報を記録します。これらの情報は利用者の端末内に保存されます。
-      本アプリには独自のアカウント登録・ログイン機能はなく、これらのワークアウト記録、設定または購入情報を
-      石神井アプリケーションズが運営する独自サーバーへ送信・保存する仕組みはありません。
-    </p>
-    <p>
-      利用者がお問い合わせメールを送信した場合、当方は返信・サポート対応のため、メールアドレス、本文その他
-      利用者が任意に提供した情報を受領することがあります。
-    </p>
-
-    <h2>2. バックアップ、CSVエクスポートおよび同期</h2>
-    <p>
-      端末内に保存された情報は、利用者の端末、OSおよびバックアップ設定等に応じて、iOS標準の端末バックアップの
-      対象となる場合があります。本アプリはCloudKit／iCloudによる独自の複数端末同期機能を提供しておらず、
-      特定のバックアップまたは復元が必ず成功することを保証しません。
-    </p>
-    <p>
-      本アプリは、ワークアウト履歴からCSVファイルを生成し、iOSの共有シートへ渡す機能を提供します。
-      CSVは当方の独自サーバーを経由しませんが、利用者が共有先として第三者アプリ、クラウドサービスその他の保存先を
-      選択した場合、当該共有先へデータが移動することがあります。CSVエクスポートは本アプリ全体のバックアップ機能ではなく、
-      CSVからアプリ状態を復元するインポート機能も提供していません。
-    </p>
-
-    <h2>3. アプリ内購入およびトライアル</h2>
-    <p>
-      本アプリは、AppleのStoreKitおよびApp Storeの仕組みを利用して、28日間のトライアルと継続利用のための
-      非消耗型アプリ内購入を提供します。取引はAppleが処理します。本アプリはアクセス権の判定のため、Appleから
-      検証済みのProduct IDや購入日時等の取引情報を端末上で取得する場合がありますが、当方はクレジットカード番号
-      その他の決済カード情報を取得せず、購入情報を当方の独自サーバーへ送信しません。
-      返金その他の取扱いはAppleの適用される規約およびポリシーに従います。
-    </p>
-    <p>
-      「購入を復元」は、Appleを通じて対象となる購入権利を復元する機能であり、ワークアウト履歴その他の端末内データを
-      復元する機能ではありません。
-    </p>
-
-    <h2>4. 外部サービスおよび外部通信</h2>
-    <p>
-      現行版の本アプリはHealthKit、Motion &amp; Fitnessその他これらに類する健康データAPIを利用しません。
-      また、Firebase Analytics、Firebase Crashlytics、Sentry等の第三者Analytics／Crash SDKを組み込んでいません。
-    </p>
-    <p>
-      一方、StoreKit／App Storeを利用する際のAppleとの通信、利用規約・プライバシーポリシーを外部ブラウザで開く際の通信、
-      CSVをiOS共有シートから共有する際の通信は発生する場合があります。法務ページを開くURLには、ワークアウト記録、
-      購入情報または利用者識別子を付加する実装はありません。
-    </p>
-
-    <h2>5. 情報の保存と削除</h2>
-    <p>
-      端末内のワークアウト記録および設定は、アプリのアンインストールその他の端末・アプリデータ管理により削除されるまで
-      ローカル領域に保存されます。iOSのバックアップ設定やAppleのバックアップ挙動によっては、バックアップ内に情報が残る
-      場合があります。利用者自身がCSVとして保存・共有したファイルは、利用者が選択した保存先に残ります。
-      お問い合わせメールは、返信およびサポート対応に合理的に必要な範囲で保管する場合があります。
-    </p>
-
-    <h2>6. 利用目的</h2>
-    <ul>
-      <li>ワークアウト記録、NEXT提案、履歴、設定その他の本アプリ機能を提供するため</li>
-      <li>AppleのStoreKit／App Storeを利用してトライアルおよび購入によるアクセス権を判定するため</li>
-      <li>App Storeを通じた購入および購入権利の復元機能を提供するため</li>
-      <li>お問い合わせおよびサポート対応のため</li>
-    </ul>
-
-    <h2>7. 本ウェブサイトのアクセス解析</h2>
-    <p>
-      本ウェブサイト（shakujii-apps.com。本ポリシーページを含みます）は、ウェブサイトの利用状況を把握するため
-      Google Analytics 4（GA4）を利用しています。GA4ではファーストパーティCookieが使用される場合があり、
-      ページ閲覧、セッション情報、おおよその地域、ブラウザ・端末情報等が収集され、アクセス解析サービスの提供に伴い
-      Googleへ送信されます。これは上記の本アプリ自体の情報取扱いとは別のものです。
-    </p>
-
-    <h2>8. 本ポリシーの変更</h2>
-    <p>
-      当方は、必要に応じて本ポリシーを変更することがあります。
-      変更後の本ポリシーは、本ページに掲載した時点から効力を生じるものとします。
-    </p>
-
-    <h2>9. お問い合わせ・事業者情報</h2>
-    <ul class="business-info">
-      <li>屋号：石神井アプリケーションズ（Shakujii Applications）</li>
-      <li>所在地：東京都豊島区東池袋2丁目62番8号 BIGオフィスプラザ池袋1206</li>
-      <li>連絡先：websupport@shakujii-apps.com</li>
-    </ul>
-  </div>
+  </section>
 
   <footer>
     石神井アプリケーションズ（Shakujii Applications）<br>
@@ -318,5 +349,10 @@
     &copy; 2026 Shakujii Applications
   </footer>
 </div>
+<script>
+  if (new URLSearchParams(window.location.search).get('source') === 'app') {
+    document.getElementById('home-link').hidden = true;
+  }
+</script>
 </body>
 </html>
