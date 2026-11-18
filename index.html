@@ -382,14 +382,14 @@
       object-fit: cover;
     }
 
-    /* Coming Soon はアイコン枠をグレーで表示 */
-    .product-card.coming-soon .card-icon {
+    /* Coming Soon はアイコン枠をグレーで表示（画像があるカードは除外） */
+    .product-card.coming-soon:not(.has-app-icon) .card-icon {
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    .product-card.coming-soon .card-icon::after {
+    .product-card.coming-soon:not(.has-app-icon) .card-icon::after {
       content: "?";
       font-size: 28px;
       color: var(--border);
@@ -677,8 +677,8 @@
         </div>
 
         <!-- カード2: Gym→Next（開発中） -->
-        <div class="product-card coming-soon">
-          <div class="card-icon"></div>
+        <div class="product-card coming-soon has-app-icon">
+          <div class="card-icon"><img src="assets/gymnext_website_icon.png" alt="Gym→Next アプリアイコン" /></div>
           <div class="card-title">Gym→Next<br><small style="font-weight:400;font-size:12px;">ジムネク</small></div>
           <div class="card-desc">筋トレを記録し、次のセットをサポートするアプリ</div>
           <span class="card-link">現在開発中</span>
